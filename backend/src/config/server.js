@@ -23,3 +23,6 @@ server.use(bodyParser.json());
 server.listen(port, function() {
     console.log(`BACKEND is running on port ${port}.`);
 });
+
+// Export the server to be used in other files
+module.exports = server;
