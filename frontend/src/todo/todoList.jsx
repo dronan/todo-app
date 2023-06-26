@@ -31,7 +31,7 @@ export default props => {
         <table className="table">
             <thead>
                 <tr>
-                    <th>Description</th>
+                    <th width="90%">Description</th>
                     <th>Actions</th>
                 </tr>
             </thead>
