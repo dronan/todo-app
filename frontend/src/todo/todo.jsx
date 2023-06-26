@@ -56,9 +56,8 @@ export default class Todo extends Component {
 
     handleRemove(e, todo) {
         const tr = e.target.parentNode.parentNode;
-          axios.delete(`${URL}/${todo._id}`)
+        axios.delete(`${URL}/${todo._id}`)
             .then(resp => {
-                
                 tr.classList.add('fadeOut');
                 setTimeout(() => {
                     this.refresh(this.state.description)
