@@ -13,7 +13,7 @@ After this, you can start the frontend server.
 
 ## Tech Stack
 
--Express
--Mongoose
--Node Restful
--PM2
+- Express
+- Mongoose
+- Node Restful
+- PM2
