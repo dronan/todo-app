@@ -1,3 +1,5 @@
+**Start the backend server before excuting it**
+
 ```
 npm install
 npm run dev
