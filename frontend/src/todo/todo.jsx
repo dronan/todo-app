@@ -54,17 +54,24 @@ export default class Todo extends Component {
             .then(resp => this.setState({ ...this.state, description, list: resp.data }));
     }
 
-    handleRemove(todo) {
-        axios.delete(`${URL}/${todo._id}`)
-            .then(resp => this.refresh(this.state.description));
+    handleRemove(e, todo) {
+        const tr = e.target.parentNode.parentNode;
+          axios.delete(`${URL}/${todo._id}`)
+            .then(resp => {
+                
+                tr.classList.add('fadeOut');
+                setTimeout(() => {
+                    this.refresh(this.state.description)
+                }, 500);
+            });
     }
 
-    handleMarkAsDone(todo) {
+    handleMarkAsDone(e, todo) {
         axios.put(`${URL}/${todo._id}`, { ...todo, done: true })
             .then(resp => this.refresh(this.state.description));
     }
 
-    handleMarkAsPending(todo) {
+    handleMarkAsPending(e, todo) {
         axios.put(`${URL}/${todo._id}`, { ...todo, done: false })
             .then(resp => this.refresh(this.state.description));
     }

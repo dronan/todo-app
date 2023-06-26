@@ -15,3 +15,7 @@
     padding-bottom: 60px;
 }
 
+.fadeOut {
+    transition: opacity 500ms;
+    opacity: 0;
+  }
