@@ -16,6 +16,7 @@ class TodoForm extends Component {
     }
 
     componentWillMount(){
+        // call the 'TODO_SEARCHED' action creator 
         this.props.search()
     }
 
