@@ -16,6 +16,10 @@ export const search = () => {
 }
 
 export const add = (description) => {
-    const request = axios.post(URL, { description })
-    return [{ type: 'TODO_ADDED', payload: request }, search() ]
+    // thunk middleware returns all executions of the action creator
+    return dispatch => {
+        axios.post(URL, { description })
+            .then(resp => dispatch({ type: 'TODO_ADDED', payload: resp.data }))
+            .then(resp => dispatch(search()))
+    }
 }
