@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 import IconButton from "../template/iconButton";
 
 export default props => {
